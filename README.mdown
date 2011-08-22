@@ -1,0 +1,36 @@
+## Developer ODBC
+
+brew install freetds
+brew install ruby-odbc
+Installed /usr/local/Cellar/ruby-odbc/0.99991/lib/odbc.bundle
+
+You will need to add this to your RUBYLIB by adding the following line to
+.profile or .bashrc or equivalent:
+
+    export RUBYLIB="/usr/local/lib:$RUBYLIB"
+
+You will need to edit freetds.conf, odbcinst.ini and odbc.ini files to set up
+access to your odbc databases.  The checked in conf/ini files work for production and development.  They're somewhere like this: /usr/local/Cellar/freetds/0.82/etc.
+
+Enabling odbc:  
+  sudo odbcinst -i -d -f /usr/local/Cellar/unixodbc/2.3.0/etc/odbcinst.ini
+
+## Production/Staging ODBC
+
+I actually don't know if this is how we did it:
+sudo apt-get update
+sudo apt-get install unixodbc unixodbc-dev tdsodbc sqsh
+sudo chmod 1644 /etc/odbc* /etc/freetds/freetds.conf
+
+Modify /etc/environment and /etc/profile per the config/ubuntu hints.
+
+Enabling odbc:  
+  sudo odbcinst -i -d -f /etc/odbcinst.ini
+
+## Creating db/m2m_schema.rb
+
+In database.yml, point your development db to an m2m database.
+
+	rake db:schema:dump SCHEMA=db/m2m_schema.rb
+
+Revert database.yml.
