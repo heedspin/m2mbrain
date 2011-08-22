@@ -4,13 +4,24 @@ brew install freetds
 brew install ruby-odbc
 Installed /usr/local/Cellar/ruby-odbc/0.99991/lib/odbc.bundle
 
+If brew install freetds does not work, you can install the old version:
+ * copy tarball from Dropbox/opt
+ * cd freetds-0.82
+ * ./configure --prefix=/usr/local/Cellar/freetds/0.82 --with-tdsver=8.0 --enable-msdblib
+ * make ; make install
+
 You will need to add this to your RUBYLIB by adding the following line to
 .profile or .bashrc or equivalent:
 
     export RUBYLIB="/usr/local/lib:$RUBYLIB"
 
-You will need to edit freetds.conf, odbcinst.ini and odbc.ini files to set up
-access to your odbc databases.  The checked in conf/ini files work for production and development.  They're somewhere like this: /usr/local/Cellar/freetds/0.82/etc.
+You will need to edit freetds.conf
+ * /usr/local/Cellar/freetds/0.82/etc
+ * Check config/odbc
+
+Edit odbcinst.ini and odbc.ini files
+ * /usr/local/Cellar/unixodbc/2.3.0/etc
+ * Check config/odbc
 
 Enabling odbc:  
   sudo odbcinst -i -d -f /usr/local/Cellar/unixodbc/2.3.0/etc/odbcinst.ini

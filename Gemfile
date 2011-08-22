@@ -1,11 +1,11 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
+gem 'mysql', '2.8.1'
+gem 'ruby-odbc',                       '0.99991', :require => 'odbc' #not a joke! must be installed manually 
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'

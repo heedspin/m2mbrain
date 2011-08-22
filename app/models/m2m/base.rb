@@ -1,7 +1,7 @@
 class M2m::Base < ApplicationModel
   self.abstract_class = true
 
-  m2m_key = "#{Rails.env}_m2m_db"
+  m2m_key = "#{Rails.env}_m2m"
   msg = if config = ActiveRecord::Base.configurations[m2m_key]
     begin
       M2m::Base.establish_connection little_planet_key

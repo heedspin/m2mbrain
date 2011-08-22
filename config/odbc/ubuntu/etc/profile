@@ -1,0 +1,5 @@
+
+# Add these:
+
+export PATH="/usr/local/sbin:/usr/sbin:/sbin:/opt/ruby-enterprise/bin:$PATH"
+export RAILS_ENV=production
