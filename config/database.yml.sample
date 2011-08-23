@@ -18,10 +18,11 @@ production:
   username: root
   encoding: utf8
 
-development_m2m:
+disabled_development_m2m:
   adapter: sqlserver
   mode: odbc
   dsn: m2m_dsn
   database: master
   username: sa
-  password: TwistedSister
+  password: 
+  
