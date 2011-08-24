@@ -1,5 +1,7 @@
 ## Developer ODBC
 
+http://honoluluhacker.com/2011/01/13/using-tinytds-to-connect-to-sql-server-with-ruby-on-rails-3-for-mac-osx/
+
 brew install freetds
 brew install ruby-odbc
 Installed /usr/local/Cellar/ruby-odbc/0.99991/lib/odbc.bundle
@@ -26,6 +28,9 @@ Edit odbcinst.ini and odbc.ini files
 Enabling odbc:  
   sudo odbcinst -i -d -f /usr/local/Cellar/unixodbc/2.3.0/etc/odbcinst.ini
 
+Test your connection
+ * isql -v m2m_dsn sa password
+
 ## Production/Staging ODBC
 
 I actually don't know if this is how we did it:
@@ -33,7 +38,7 @@ sudo apt-get update
 sudo apt-get install unixodbc unixodbc-dev tdsodbc sqsh
 sudo chmod 1644 /etc/odbc* /etc/freetds/freetds.conf
 
-Modify /etc/environment and /etc/profile per the config/ubuntu hints.
+Modify /etc/environment and /etc/profile per the config/odbc/ubuntu hints.
 
 Enabling odbc:  
   sudo odbcinst -i -d -f /etc/odbcinst.ini

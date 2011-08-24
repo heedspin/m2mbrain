@@ -17,12 +17,14 @@ production:
   database: m2mbrain_development
   username: root
   encoding: utf8
-
-disabled_development_m2m:
-  adapter: sqlserver
-  mode: odbc
-  dsn: m2m_dsn
-  database: master
-  username: sa
-  password: 
   
+development_m2m:
+  adapter: sqlserver
+  mode: dblib
+  host: 192.168.x.x
+  tds_version: 70
+  database: 
+  username: 
+  password: 
+  timeout: 5000
+  encoding: utf8
