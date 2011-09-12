@@ -35,7 +35,7 @@ def main
     end
     if part.drawing_paths.size == 0
       no_drawings.push part
-    elsif part.drawing_paths.size <= 3
+    elsif part.drawing_paths.size == 1
       sets = []
       for n in 1..(part.drawing_paths.size)
         sets.push "fccadfile#{n} = '#{get_path(part.drawing_paths[n-1])}'"
