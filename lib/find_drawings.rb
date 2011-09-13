@@ -3,7 +3,7 @@
 Part = Struct.new(:fpartno, :frev, :fdrawno, :drawing_paths)
 
 def get_path(path)
-  '\\\\sol\\Drawings\\DRAWINGS' + path.gsub('./','\\').gsub('/','\\')
+  '\\\\sol\\Drawings\\DRAWINGS' + path.gsub('./','\\').gsub('/','\\').gsub("'","''")
 end
 
 def main
